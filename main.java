@@ -26,3 +26,22 @@ public class Main{
         System.out.print(Arrays.toString(arr1));
     }
 }
+
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String sentence = sc.nextLine();
+		
+		String[] words = sentence.split(" ");
+		
+		System.out.print(Arrays.toString(words));
+	}
+}
+
+
+
