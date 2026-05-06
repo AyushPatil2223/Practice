@@ -122,3 +122,30 @@ public class Main
 		System.out.print(arr[1]);
 	}
 }
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		 
+		int[] arr = {5,3,2,1,4};
+		
+		int n = arr.length;
+         
+        int largest = Integer.MIN_VALUE;
+        int secondlargest = Integer.MIN_VALUE;
+        
+        for(int i = 0 ; i < n ; i++){
+            if(largest < arr[i]){
+                secondlargest = largest;
+                largest = arr[i];
+                
+            }
+           else if(secondlargest < arr[i] && largest > arr[i]){
+               secondlargest = arr[i];
+           }
+        }
+        
+        System.out.print(secondlargest);
+	}
+}
