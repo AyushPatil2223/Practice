@@ -175,3 +175,23 @@ public class Main
 		System.out.println("Hello World");
 	}
 }
+
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {10,5,20,8} ;
+		int n = arr.length ;
+		int smallest = 0;
+		
+		for(int i = 0 ; i < n -1 ; i++) {
+		    for(int j = i+1 ; j < n ; j++){
+		        if(arr[j] - arr[i] > 0){
+		            smallest = Math.max(arr[j]-arr[i], smallest) ; 
+		        }
+		    }
+		}
+		System.out.print(smallest);
+	}
+}
