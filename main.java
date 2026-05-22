@@ -250,3 +250,32 @@ public class Main
 		System.out.print(list);
 	}
 }
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		ArrayList<Integer> list = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		for(int i = 0 ; i < n ; i++){
+		    list.add(sc.nextInt());
+		}
+		
+		int number = sc.nextInt();
+		
+		if(!list.contains(number)){
+		    System.out.print("Element is not present in list");
+		}
+		
+		int count = 0;
+		
+		for(int num : list){
+		    if(num == number ){
+		        count++;
+		    }
+		}
+		System.out.print(number +  "presnt in list" + count + "times");
+	}
+}
