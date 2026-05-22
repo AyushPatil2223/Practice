@@ -229,3 +229,24 @@ public class Main
 		System.out.print(list);
 	}
 }
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		ArrayList<Integer> list = new ArrayList<>(Arrays.asList(6,5,4,3,2,1));
+		int n = list.size();
+		
+		for(int j = 0 ; j < n-1 ; j++){
+		for(int i = 0 ; i < n-j-1 ; i++){
+		    if(list.get(i) > list.get(i+1)){
+		        int temp = list.get(i);
+		        list.set(i , list.get(i+1));
+		        list.set(i+1, temp);
+		    }
+		}
+		}
+		System.out.print(list);
+	}
+}
