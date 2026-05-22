@@ -195,3 +195,25 @@ public class Main
 		System.out.print(smallest);
 	}
 }
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		ArrayList<Integer> list = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int smallest = 0;
+		
+		for(int i = 0 ; i < n ; i++){
+		    list.add(sc.nextInt());
+		}
+		
+		for(int num : list){
+		    if(num > smallest ){
+		        smallest = num;		    }
+		}
+		System.out.print(smallest);
+	}
+}
