@@ -300,3 +300,29 @@ public class Main {
         System.out.print(map);
     }
 }
+
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {    //apple
+
+        Scanner sc = new Scanner(System.in);
+        
+        String s = sc.nextLine();
+        
+        HashMap<Character, Integer> map = new HashMap<>();
+        
+        for(Character c : s.toCharArray()){
+            map.put(c , map.getOrDefault(c, 0) + 1);
+        }
+        
+        for(Character a : s.toCharArray()){
+            if(map.get(a) == 1){
+                System.out.print(a);
+                return;
+            }
+        }
+    }
+}
