@@ -279,3 +279,24 @@ public class Main
 		System.out.print(number +  "presnt in list" + count + "times");
 	}
 }
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);      //"apple"
+        
+        String s = sc.nextLine();
+        
+        int n = s.length();
+        
+        HashMap<Character, Integer> map = new HashMap<>();
+        
+        for(int i = 0 ; i < n ; i++){
+            map.put(s.charAt(i) , map.getOrDefault(s.charAt(i), 0) + 1 );
+        }
+        
+        System.out.print(map);
+    }
+}
