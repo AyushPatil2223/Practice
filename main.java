@@ -326,3 +326,24 @@ public class Main {
         }
     }
 }
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {400,1,2,5,5,4};
+		HashMap<Integer, Integer> map = new HashMap<>();
+		
+		for(int num : arr){
+		    map.put(num , map.getOrDefault(num , 0) + 1);
+		}
+		
+		for(int k : map.keySet()){
+		    if(map.get(k) > 1){
+		        System.out.print(k + " ");
+		    }
+		}
+	}
+}
