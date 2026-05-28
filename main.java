@@ -369,3 +369,49 @@ public class Main {
         System.out.println(prefix);
     }
 }
+
+
+
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	String s = sc.next();
+	sc.nextLine();
+	String a = sc.next();
+	
+	String d = "";
+	String m = "";
+	
+	
+	char[] b = s.toCharArray();
+	char[] c = a.toCharArray();
+	
+	 Arrays.sort(b);
+	 Arrays.sort(c);
+	
+	for(int i = 0 ; i < b.length; i++){
+	    d = d + b[i];
+	}
+	
+	for(int j = 0 ; j < c.length; j++){
+	    m = m + c[j];
+	}
+	
+	  for(int i = 0 ; i < d.length(); i++){
+	     if(m.charAt(i) != d.charAt(i)){
+	         System.out.print("false");
+	         return;
+	     }
+	  }
+	System.out.print("true");
+	}
+}
