@@ -442,3 +442,35 @@ public class Main
          System.out.print(max);
      }
  }
+
+
+
+  // Longest substring length
+ //Input: "abcabcbb"  
+ //Output: 3
+ import java.util.*;
+ public class Main{
+     public static void main ( String[] args){
+         String s = "abbbdbffbffb";
+         int n = s.length();
+         
+         int left = 0 ; 
+         int count = 0;
+         
+         HashSet<Character> set = new HashSet<>();
+         
+         for(int right = 0 ; right < n ; right++){
+             
+             while(set.contains(s.charAt(right))){
+                 set.remove(s.charAt(left));
+                 left++;
+             }
+             set.add(s.charAt(right));
+             
+             
+           count =   Math.max(count , right - left + 1);
+         }
+         
+         System.out.print(count);
+     }
+ }
