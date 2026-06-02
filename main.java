@@ -474,3 +474,49 @@ public class Main
          System.out.print(count);
      }
  }
+
+
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "{()}" ;
+		boolean valid = true;
+		
+		Stack<Character> stack = new Stack<>();
+		for(Character c : str.toCharArray()){
+		    if(c == '{' || c == '(' || c == '['){
+		        stack.push(c);
+		    }else{
+		        if(stack.isEmpty()){
+		            valid = false;
+		            break;
+		        }
+		        
+		        char top = stack.pop();
+		        
+		        if((c == ')'&& top != '(') ||
+		           (c == '}' && top != '{') ||
+		           (c == ']' && top != '[')) {
+		               valid = false;
+		               break;
+		           }
+		        
+		        
+		    }
+		    
+		    
+		}
+		if(!stack.isEmpty()){
+		    valid = false;
+		}
+	
+		   
+		   
+		 System.out.print(valid);
+		
+	}
+}
