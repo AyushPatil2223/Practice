@@ -558,3 +558,22 @@ public class Main
 	   System.out.print(valid);
 	}
 }
+
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        String str = "hello";
+        Stack<Character> stack = new Stack<>();
+        
+        for(Character ch : str.toCharArray()){
+            stack.push(ch);
+        }
+        
+        for(int i = 0 ; i < str.length(); i++){
+            Character c = stack.pop();
+            System.out.print(c);
+        }
+    }
+}
