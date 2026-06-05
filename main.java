@@ -577,3 +577,41 @@ public class Main{
         }
     }
 }
+
+
+
+
+// Input: [4, 5, 2, 10]
+
+// Output:
+// 5 10 10 -1
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+        int[] arr = {4,5,2,10};
+        int n = arr.length;
+        
+        int[] result = new int[n];
+        Stack<Integer> stack = new Stack<>();
+        
+        for(int i = n-1; i >= 0 ; i--){
+            while(!stack.isEmpty() && arr[i] > stack.peek()){
+                stack.pop();
+            }
+            
+            if(stack.isEmpty()){
+               result[i] = -1;
+            }else{
+                result[i] = stack.peek();
+            }
+            
+            stack.push(arr[i]);
+            
+        }
+        
+        System.out.print(Arrays.toString(result));
+	}
+}
