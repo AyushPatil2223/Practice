@@ -684,3 +684,30 @@ public class Main
 	     System.out.print(set);
 	}
 }
+
+
+
+// Input: "abbaca"
+// Output: "ca"
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	     String str = "abca";
+	     Stack<Character> stack = new Stack<>();
+	     
+	     for(char ch : str.toCharArray()){
+	         if(!stack.isEmpty() && stack.peek() == ch){
+	             stack.pop();
+	         }else{
+	             stack.push(ch);
+	         }
+	     }
+	     StringBuilder sb = new StringBuilder();
+	     for(char ch : stack) {
+	         sb.append(ch);
+	     }
+	     System.out.print(sb.toString());
+	}
+}
