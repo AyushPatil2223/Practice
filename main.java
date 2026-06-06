@@ -660,3 +660,27 @@ public class Main {
         );
     }
 }
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	     String str = "abbaca";
+	     
+	     HashSet<Character> set = new HashSet<>();
+	     
+	     for(char ch : str.toCharArray()){
+	     
+	     if(!set.contains(ch)){
+	         set.add(ch);
+	     }else{
+	         set.remove(ch);
+	     }
+	     
+	     }
+	     
+	     System.out.print(set);
+	}
+}
