@@ -740,3 +740,136 @@ public class Main
 		System.out.print(Arrays.toString(span));
 	}
 }
+
+
+Create database manage;
+
+select * from customers;
+select * from orders;
+select * from products;
+select * from OrderDetails;
+
+-- Show all customers with their orders.
+select c.CustomerName , o.OrderID
+From customers c
+JOIN orders o
+ON c.CustomerID = o.CustomerID;
+
+-- Show CustomerName and OrderAmount.
+select c.CustomerName , o.Amount
+From customers c
+INNER JOIN orders o
+On c.customerid = o.customerid;
+
+-- Show all orders along with customer city.
+Select o.OrderID , c.City
+From customers c
+INNER JOIN orders o
+ON c.CustomerID = o.CustomerID;
+
+-- Display OrderID, ProductName, Quantity.
+Select o.OrderID, p.ProductName, s.Quantity
+From orders o
+JOIN OrderDetails s
+ON o.OrderID = s.OrderID
+JOIN products p
+ON s.ProductID = p.ProductID; 
+
+-- Show all products ordered by customers.
+Select p.ProductName
+From orders o
+JOIN OrderDetails s
+ON o.OrderID = s.OrderID
+JOIN products p
+ON s.ProductID = p.ProductID;
+
+select * from customers;
+select * from orders;
+select * from products;
+select * from OrderDetails;
+
+-- Find total orders placed by each customer.
+select CustomerId, Count(*) AS ordercount
+From orders 
+GROUP by CustomerID
+ORDER BY Customerid;
+
+-- Find total amount spent by each customer.
+select c.CustomerName, SUM(o.Amount) AS TotalAmount
+From customers c 
+JOIN orders o
+ON c.CustomerId = o.CustomerID
+GROUP BY o.CustomerID ;
+
+-- Show customers who placed more than one order
+Select c.CustomerName, Count(o.OrderID) AS Totalcount
+From customers c 
+JOIN orders o
+ON c.CustomerID = o.CustomerID
+Group By c.CustomerName
+HAVING Count(o.OrderID) > 1;
+
+-- Find products ordered more than 2 times.
+Select p.ProductName , Count(s.OrderID)
+From OrderDetails s 
+JOIN products p
+ON s.ProductID = p.ProductID
+Group by p.ProductID
+having Count(s.OrderID) > 1;
+
+-- Display customer name, order id, product name.
+
+Select c.CustomerName , o.orderID, p.ProductName
+From customers c 
+JOIN orders o 
+ON c.CustomerID = o.CustomerID
+JOIN OrderDetails s 
+ON o.OrderID = s.OrderID
+JOIN products p
+ON s.productID = p.ProductID;
+
+-- Find the customer who spent the highest total amount.
+
+Select c.CustomerName , SUM(o.Amount)
+From customers c 
+JOIN orders o 
+ON c.CustomerID = o.CustomerID
+Group by c.CustomerName
+Order by SUM(o.Amount) DESC
+LIMIT 1;
+
+-- Find the most ordered product.
+
+Select p.ProductName, Count(o.OrderID)
+From OrderDetails o
+JOIN products p
+ON o.ProductID = p.ProductID
+Group By p.ProductName
+Order By (Count(o.OrderID)) DESC
+LIMIT 1;
+
+
+SELECT p.ProductName, COUNT(*) AS TotalOrders
+FROM OrderDetails o
+JOIN Products p
+ON o.ProductID = p.ProductID
+GROUP BY p.ProductID, p.ProductName
+HAVING COUNT(*) = (
+    SELECT MAX(OrderCount)
+    FROM (
+        SELECT COUNT(*) AS OrderCount
+        FROM OrderDetails
+        GROUP BY ProductID
+    ) t
+);
+
+
+select * from customers;
+select * from orders;
+select * from products;
+select * from OrderDetails;
+
+
+
+
+
